@@ -1,7 +1,7 @@
 version: '1.0'
 services:
   api: 
-    image: usersapi
+    image: employeeapi
     build:
       context: .
       dockerfile: Dockerfile
