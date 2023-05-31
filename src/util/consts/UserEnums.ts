@@ -3,4 +3,11 @@ enum UserRoles {
     SUBSCRIBER = 'subscriber'
 };
 
-export {UserRoles};
+enum UserStatuses {
+    ACTIVE = 'active',
+    PENDING = 'pending',
+    SUSPEND = 'suspend',
+    DELETED = 'deleted',
+};
+
+export {UserRoles, UserStatuses};

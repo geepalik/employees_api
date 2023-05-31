@@ -1,11 +1,8 @@
 import { UserRoles, UserStatuses } from "../../../util/consts/UserEnums";
 
-export interface User {
-    id: number;
+export interface UpdateUserDto {
+    userId: number;
     name: string;
-    email: string;
-    hashed_password?: string;
-    salt?: string;
     role: UserRoles;
     status: UserStatuses;
 }

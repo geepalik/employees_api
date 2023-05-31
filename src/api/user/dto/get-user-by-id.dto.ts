@@ -1,3 +1,3 @@
 export interface GetUserByIdDto{
-    userId: string;
+    userId: number;
 }
