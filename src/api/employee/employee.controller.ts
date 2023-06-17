@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { BaseController } from "../../base/base.controller";
 import { EmployeeService } from "./employee.service";
 import { GetEmployeeByIdDto } from "./dto/get-employee-by-id.dto";
@@ -46,12 +46,18 @@ export class EmployeeController extends BaseController{
         }
     }
 
-    async getAllEmployees(req: Request, res: Response){
+    async getAllEmployees(req: Request, res: Response, next: NextFunction){
         try{
             const doc = await this.employeeService.getAllEmployees();
-            this.jsonRes(doc, res);
+            res.locals.doc = doc;
+            next();
         }catch(e: any){
-            this.errRes(e, res, e.message, e.statusCode);
+            res.locals.errorData = {
+                status: e.statusCode, 
+                message: e.message, 
+                originalMessage: e.originalMessage
+            };
+            next();
         }
     }
 
