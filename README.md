@@ -1,6 +1,12 @@
 # Employees API
 Needs Docker installed to run
 
+#### Business Requirements
+```
+As a restaurant owner, I need to keep a list of my employees so I can integrate into my enterprise application systems for HR purposes.
+The working service should allow basic CRUD operations for employee records via HTTP API
+```
+
 Clone repository in target path
 -----
 
